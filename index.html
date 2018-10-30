@@ -28,9 +28,11 @@
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script src="js/cookies.js"></script>
 
 	</head>
-	<body>
+
+	<body onload="checkLogin()">
 
 	<div class="fh5co-loader"></div>
 
@@ -43,8 +45,8 @@
 				</div>
 				<div class="col-xs-10 text-right menu-1">
 					<ul>
-						<li class="active"><a href="index.html">Home</a></li>
-						<li><a href="about.html">Story</a></li>
+						<li class="active"><a href="index.html">Brookline Reception</a></li>
+						<li><a href="about.html">Our Story</a></li>
 					</ul>
 				</div>
 			</div>
@@ -269,7 +271,12 @@ If you are coming from out of town, we recommend that you book your accommodatio
 	<!-- Main -->
 	<script src="js/main.js"></script>
 
-
+	<script>
+	checkLogin();
+	var status = getCookie("status");
+	if(status=="secret"){$("ul").prepend("<li><a href='topsecret.html'>Intimate Maine</a></li>");}
+	console.log("Status: " + getCookie("status"));
+	</script>
 
 	</body>
 </html>
